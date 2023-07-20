@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000' });
+const backendurl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'
+
+const API = axios.create({ baseURL: backendurl });
 const TINT_API = axios.create({ baseURL: 'http://localhost:8080' });
 
 export const getModules = (userId) => API.get(`/api/modules/${userId}`);
