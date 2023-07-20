@@ -1,0 +1,75 @@
+{
+  "name": "quizshare",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ],
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@heroicons/react": "^2.0.18",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/joy": "^5.0.0-alpha.81",
+    "@mui/material": "^5.11.3",
+    "@preline/overlay": "^1.4.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.2.2",
+    "baidu-translate-api": "^0.4.3",
+    "bcryptjs": "^2.4.3",
+    "daisyui": "^2.51.6",
+    "flowbite": "^1.6.6",
+    "flowbite-react": "^0.4.7",
+    "framer-motion": "^10.12.16",
+    "google-translate-api": "^2.3.0",
+    "jsonwebtoken": "^9.0.0",
+    "linked-list": "^3.1.0",
+    "preline": "^1.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.1",
+    "react-scrollbars-custom": "^4.1.1",
+    "tailwind": "^4.0.0",
+    "translate": "^1.4.1",
+    "web-vitals": "^2.1.4",
+    "wordreference-api": "^1.1.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-react": "^7.18.6",
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.3.9"
+  }
+}
