@@ -94,7 +94,8 @@ function HomePage({ userData, welcome, setWelcome }) {
     } catch (error) {
       setCreating(false);
       console.log(error);
-      setCreateError(error.response.data.message);
+      const message = error.response ? error.response.data.message : "Unable to create module."
+      setCreateError(message);
     }
   };
 

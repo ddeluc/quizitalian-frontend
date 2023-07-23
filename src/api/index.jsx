@@ -3,7 +3,7 @@ import axios from 'axios';
 const backendurl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'
 
 const API = axios.create({ baseURL: backendurl });
-const TINT_API = axios.create({ baseURL: 'http://localhost:8080' });
+const TINT_API = axios.create({ baseURL: 'https://dh.fbk.eu/tint-demo-api/tint/' });
 
 export const getModules = (userId) => API.get(`/api/modules/${userId}`);
 export const getModule = (username, id) => API.get(`/api/modules/${username}/${id}`);
