@@ -2,7 +2,7 @@ import { keyframes } from '@emotion/react';
 import translate from 'translate';
 import * as api from '../../api/index.jsx';
 translate.engine = 'deepl';
-translate.key = import.meta.env.VITE_TRANSLATION_KEY;
+translate.key = 'a6353ea4-0481-de0d-39d9-46e8254a53ce';
 
 // Create a flashcard
 const translateCards = async (terms) => {
