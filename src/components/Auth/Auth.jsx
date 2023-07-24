@@ -16,6 +16,7 @@ function Auth({ setUserData, setToken, setWelcome }) {
 
   const [isSignup, setIsSignup] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [signingIn, setSigningIn] = useState(false);
   const [error, setError] = useState(null);
   const [usernameInput, setUsernameInput] = useState();
   const [passwordInput, setPasswordInput] = useState();
@@ -49,6 +50,7 @@ function Auth({ setUserData, setToken, setWelcome }) {
     } else {
       // handle signin
       try {
+        setSigningIn(true);
         const { data } = await api.signIn({ username: usernameInput, password: passwordInput });
         const token = data.token;
         const userdata = {id: data.result._id, username: data.result.username};
@@ -64,7 +66,8 @@ function Auth({ setUserData, setToken, setWelcome }) {
         console.log(error)
         setError(error.response.data.message);
       }
-    }
+      setSigningIn(false);
+    }    
   };
 
   const handlePasswordChange = (event) => {
@@ -192,7 +195,7 @@ function Auth({ setUserData, setToken, setWelcome }) {
                 { !isSignup ? 'CREATE ACCOUNT' : 'SIGN IN' }               
               </button>
               <button onClick={handleSubmit} className="border-2 p-2 px-3 hover:bg-slate-200 border-slate-800 text-slate-800 font-geologica rounded-full">
-                { !isSignup ? 'SIGN IN' : 'CREATE ACCOUNT' }
+                { !isSignup ? signingIn ? 'SIGNING IN...' : 'SIGN IN' : 'CREATE ACCOUNT' }
               </button>
             </div>
             <div className="flex w-full">

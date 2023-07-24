@@ -29,7 +29,7 @@ function Navbar({ userData, setToken, setUserData, welcome }) {
 
   return (  
     <>
-      <div onClick={() => navigate('/')} className="flex justify-between items-center bg-transparent h-navbar">
+      <div onClick={() => navigate('/')} className="flex justify-between items-center bg-transparent h-navbar border border-slate-300">
         <div className="ml-6 font-geologica text-3xl flex items-baseline text-slate-800 select-none hover:cursor-pointer">
           <motion.div variants={logoSlideIn(1)} initial="hidden" animate="show" className="bg-tropicalindigo-200 rounded-md mr-0.5 py-2.5 px-1" />
           <motion.div variants={logoSlideIn(0.75)} initial="hidden" animate="show" className="bg-sunglow-200 rounded-md mr-0.5 py-2.5 px-1" />

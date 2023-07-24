@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className="h-footer w-screen border flex justify-between items-center font-geologica border-slate-200">
+      <div className="h-footer w-screen border flex justify-between items-center font-geologica border-slate-300">
         <motion.a whileHover={{ y: -2 }} href="https://donate.stripe.com/7sIcPp9pEeNnbFm288" target="_blank" className="px-2 py-1 pr-3 flex text-xl font-light text-slate-800 ml-6 space-x-2 items-center border border-slate-800 rounded-full hover:bg-slate-200 hover:cursor-default">
           <CurrencyDollarIcon className="h-8 w-8"/>
           <span>Tip</span>
