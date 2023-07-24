@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import { RecoveryContext } from "../../App";
+import { BACKEND_URL } from "../../constants";
 
 export default function () {
   const { email, otp, setPage } = useContext(RecoveryContext);
@@ -12,7 +13,7 @@ export default function () {
   function resendOTP() {
     if (disable) return;
     axios
-      .post("http://localhost:5000/send_recovery_email", {
+      .post( `${BACKEND_URL}/send_recovery_email`, {
         OTP: otp,
         recipient_email: email,
       })

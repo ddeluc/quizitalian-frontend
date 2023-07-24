@@ -6,6 +6,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { logoSlideIn } from '../../utils/motion.js';
 import { ExclamationCircleIcon, EyeIcon } from '@heroicons/react/24/outline';
+import { BACKEND_URL } from '../../constants/index.jsx';
 import axios from 'axios';
 
 import * as api from '../../api/index.jsx';
@@ -23,7 +24,6 @@ function Auth({ setUserData, setToken, setWelcome }) {
   const { setEmail, setPage, email, setOTP } = useContext(RecoveryContext);
 
   const handleSubmit = async (e) => {
-    console.log("Called");
     e.preventDefault();
 
     if (isSignup) {
@@ -32,7 +32,6 @@ function Auth({ setUserData, setToken, setWelcome }) {
         const { data } = await api.signUp({ username: usernameInput, password: passwordInput, confirmPassword: confirmPasswordInput });
         // POTENTIAL ERROR: Used deconstruction here. If it breaks
         // revert back to const token = data.token;
-        console.log(data)
         const token = data.token;
         const userdata = {id: data.result._id, username: data.result.username};
 
@@ -50,7 +49,6 @@ function Auth({ setUserData, setToken, setWelcome }) {
     } else {
       // handle signin
       try {
-        console.log("Called in SignIn");
         const { data } = await api.signIn({ username: usernameInput, password: passwordInput });
         const token = data.token;
         const userdata = {id: data.result._id, username: data.result.username};
@@ -88,7 +86,7 @@ function Auth({ setUserData, setToken, setWelcome }) {
       setOTP(OTP);
 
       axios
-        .post("http://localhost:5000/send_recovery_email", {
+        .post(`${BACKEND_URL}/send_recovery_email`, {
           OTP,
           recipient_email: usernameInput,
         })

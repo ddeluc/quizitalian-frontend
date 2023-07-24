@@ -1,8 +1,7 @@
 import axios from 'axios';
+import { BACKEND_URL } from '../constants';
 
-const backendurl = 'https://quizitalian-backend-3onsy6bzlq-uc.a.run.app';
-
-const API = axios.create({ baseURL: backendurl });
+const API = axios.create({ baseURL: BACKEND_URL });
 const TINT_API = axios.create({ baseURL: 'https://dh.fbk.eu/tint-demo-api/tint/' });
 
 export const getModules = (userId) => API.get(`/api/modules/${userId}`);

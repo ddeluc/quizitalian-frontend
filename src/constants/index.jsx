@@ -1,3 +1,5 @@
+export const BACKEND_URL = 'https://quizitalian-backend-3onsy6bzlq-uc.a.run.app';
+
 export const quizSetup = {
   prepositions: {
     title: 'Prepositions',

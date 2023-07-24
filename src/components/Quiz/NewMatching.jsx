@@ -29,7 +29,6 @@ const NewMatching = ({ moduleData }) => {
     cardSet = cardSet.map((item, i) => ({ ...item, index: i+1}))
 
     total = cardSet.length;
-    console.log(total);
     generateStacks(cardSet);
   }, []);
   
@@ -49,13 +48,12 @@ const NewMatching = ({ moduleData }) => {
     }))
 
     const scoresCopy = [...scores];
-    scoresCopy.push(score/2);
+    scoresCopy.push(score);
     setScores(scoresCopy);
   }
 
   // Create random stack of selections
   const generateStacks = (cards) => {
-    console.log(cards);
     
     // Create a shuffled set
     let copySet = copyArray(cards);

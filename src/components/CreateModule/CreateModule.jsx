@@ -51,8 +51,6 @@ function CreateModule({ addModule, user }) {
   };
 
   const createVerbHelper = (token1, token2) => {
-    console.log(token1);
-    console.log(token2);
     let helper = [];
     let compoundForm = 'unknown';
 
@@ -94,7 +92,6 @@ function CreateModule({ addModule, user }) {
     }
 
     // return helper + " " + token2.lemma;
-    console.log(helper);
     helper.push(token2.lemma)
     return helper;
   };
@@ -234,14 +231,12 @@ function CreateModule({ addModule, user }) {
       }
 
       // Get Tint data
-      const tintData = await api.tintRequest(text); 
-      console.log(tintData);     
+      const tintData = await api.tintRequest(text);      
 
       // Get all sentences: sentence: { tokens: [], verbs: []}
       const sentences = tintData.data.sentences;
 
       const preprocessedData = await preprocessSentences(sentences);
-      console.log(preprocessedData)
       
       const sendDataModule = {
         title: title,
@@ -252,8 +247,6 @@ function CreateModule({ addModule, user }) {
         verbList: preprocessedData.verbList,
         sentences: sentences,
       };
-
-      console.log(sendDataModule);
 
       const { data } = await api.createModule(sendDataModule);
 

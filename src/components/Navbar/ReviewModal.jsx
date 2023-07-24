@@ -14,7 +14,6 @@ const ReviewModal = ({ isOpen, onClose, logout }) => {
   const submitReview = async () => {
     if (reviewInput != '') {
       const data = await api.saveReview(reviewInput);
-      console.log(data);
       setSubmitted(true);
     }
   };

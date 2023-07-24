@@ -100,7 +100,6 @@ function QuizInput({
   }
 
   const handleClick = () => {
-    console.log('clicked')
     if (inputSelection.answer.index != null && isFocus) {      
       setWordbank((prevWordbank) => prevWordbank.map((item) => {
         if (inputSelection.answer.index == item.index)

@@ -11,7 +11,6 @@ export default function Reset() {
 
   const changePassword = async () => {
     setPage("recovered");
-    console.log(email);
 
     try {
         const data = await api.updatePassword({
@@ -19,7 +18,6 @@ export default function Reset() {
             password: password,
             confirmPassword: confirmPassword,
         });
-        console.log(data);
     } catch (error) {
         console.log(error);
     };
