@@ -122,6 +122,21 @@ const addVerbHelpers = (sentences) => {
   })
 }
 
+const assignColor = (pos) => {
+  // handle pos
+  if (pos == 'S') {
+    return "bg-bittersweet-200";        
+  } else if (pos == 'E') {
+    return "bg-sunglow-200";
+  } else if (pos == 'A' || pos == 'AP') {
+    return "bg-tropicalindigo-200";
+  } else if (pos == 'V' || pos == 'VA') {
+    return "bg-skyblue-200";
+  } else {
+    return null;
+  }
+}
+
 const preprocessData = async (sentences, text, userData) => {
   const prepositionTerms = [];
   const nounTerms = [];
@@ -143,7 +158,7 @@ const preprocessData = async (sentences, text, userData) => {
     let prepCard = [];
     let offset = 0;
     sentence.tokens.forEach(async (token) => {
-      token.color = null;
+      token.color = assignColor(token.pos);
 
       if (token.index == 1)
         offset = token.characterOffsetBegin;
@@ -177,25 +192,9 @@ const preprocessData = async (sentences, text, userData) => {
         }
       }
 
-      // handle nouns
-      if (token.pos == 'S') {
-        token.color = "bg-bittersweet-200";        
-      }
-
       // handle prepositions
       if (token.pos == 'E') {
-        token.color = "bg-sunglow-200";
         prepCheck = true;
-      }
-
-      // handle adjectives
-      if (token.pos == 'A' || token.pos == 'AP') {
-        token.color = "bg-tropicalindigo-200";
-      }
-
-      // handle verbs
-      if (token.pos == 'V' || token.pos == 'VA') {
-        token.color = "bg-skyblue-200";
       }
 
       // Add the helper field for verbs
