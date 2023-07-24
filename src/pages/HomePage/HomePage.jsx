@@ -148,7 +148,7 @@ function HomePage({ userData, welcome, setWelcome }) {
       return (
         <>        
           <div className="flex h-sansnavbarfooter">
-            <div className=" pl-6 pr-3 py-6 flex-col flex-shrink-0 w-5/20 
+            <div className=" pl-6 pr-3 py-6 flex-col flex-shrink-0 w-5/20 min-w-fit 
               overflow-scroll overflow-x-hidden no-scrollbar"
             >
               { welcome.tipLeft ? 
