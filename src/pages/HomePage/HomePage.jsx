@@ -239,7 +239,7 @@ function HomePage({ userData, welcome, setWelcome }) {
                 </ul>
               </div>         
             </div>
-            <div className="w-10/20 px-3 py-3 overflow-scroll overflow-x-hidden no-scrollbar">
+            <div className="w-10/20 px-3 py-6 overflow-scroll overflow-x-hidden no-scrollbar">
               <div className="h-2/3">
               { creating ? 
                 (
