@@ -77,15 +77,15 @@ const Selection = ({
         transition="show"
         initial="hidden"
         animate="show"
-        className="flex-col border-2 border-b-4 bg-slate-100 border-slate-400 rounded-lg"
+        className="flex-col border-2 p-6 space-y-2 border-b-4 bg-slate-100 border-slate-400 rounded-lg"
       >
-        <div className="px-6 pt-6 pb-3 flex space-x-3 items-center">
-          <h1 className="text-4xl text-slate-800 font-geologica font-bold 
-            hover:cursor-default select-none"
-          >
-            {selected.title}
-          </h1>
-          <div className="flex space-x-3">
+        <h1 className="text-4xl text-slate-800 font-geologica font-bold 
+          hover:cursor-default select-none"
+        >
+          {selected.title}
+        </h1>
+        <div className="flex space-x-3 items-center">          
+          <div className="flex">
             <button 
               onClick={() => {
                 if (selected.complete) {
@@ -93,14 +93,14 @@ const Selection = ({
                   setLemma(false);
                 }
               }} 
-              className={`text-3xl text-slate-300 font-geologica p-1 px-3 rounded-full 
+              className={`text-3xl text-slate-300 font-geologica rounded-full
               ${ !selected.complete ? 'hover:text-slate-500' : 'hover:text-slate-800'}`}
             >
               { !view ? 
                 <div className="group flex items-center">
                   <EyeIcon className="h-8 w-8" /> 
                   <span className={`ml-2 ${ !selected.complete ? 'group-hover:opacity-100' : ''} 
-                  text-slate-500 w-max font-light transition-opacity text-base
+                    text-slate-500 w-max font-light transition-opacity text-base
                     opacity-0`}
                   >
                     complete the module to view the original text
@@ -112,10 +112,10 @@ const Selection = ({
             </button>
           </div>         
         </div>
-        <div className="px-6 pb-2 flex items-center font-geologica text-xl text-slate-500">
+        <div className="flex items-center font-geologica text-xl text-slate-500">
           Quizzes
         </div>             
-        <div className={`mx-6 mb-6 flex flex-wrap`}>
+        <div className={`flex flex-wrap`}>
           <motion.div
             initial="hidden" 
             animate="visible" 
@@ -214,10 +214,10 @@ const Selection = ({
             </div>
           </motion.div>
         </div>     
-        <div className="px-6 pb-2 flex items-center font-geologica text-xl text-slate-500">
+        <div className="flex items-center font-geologica text-xl text-slate-500">
           Original Text
         </div>                                     
-        <div className="flex px-6 pb-6 flex-wrap hover:cursor-default">          
+        <div className="flex flex-wrap hover:cursor-default">          
           {selected.sentences.map((sentence, i) => {
             return (
             sentence.tokens.map((token, j) => (

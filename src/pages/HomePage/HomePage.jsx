@@ -148,12 +148,12 @@ function HomePage({ userData, welcome, setWelcome }) {
       return (
         <>        
           <div className="flex h-sansnavbarfooter">
-            <div className=" pl-6 pr-3 py-6 flex-col flex-shrink-0 w-5/20 
-              overflow-scroll overflow-x-hidden no-scrollbar"
+            <div className="pl-6 pr-3 py-3 flex flex-col w-96
+              overflow-scroll overflow-x-hidden no-scrollbar border"
             >
               { welcome.tipLeft ? 
                 (
-                  <div className="relative flex flex-col p-6 border-4 select-none 
+                  <div className="relative flex-col p-6 border-4 select-none
                     rounded-lg text-slate-800 border-sunglow-200 bg-sunglow-50 
                     border-dashed mb-6 font-geologica"
                   >
@@ -205,7 +205,7 @@ function HomePage({ userData, welcome, setWelcome }) {
                       whileHover={{ x: 4 }} 
                       onClick={() => handleSelection(module)} 
                       className={`border-2 border-b-4 hover:border-slate-400
-                      border-slate-300 p-3 rounded-lg 
+                      border-slate-300 p-3 rounded-lg
                       hover:bg-slate-200 flex flex-col justify-between items-center 
                       hover:cursor-pointer ${selected == module ? 'bg-slate-200' : ''}`}
                     >
@@ -239,7 +239,7 @@ function HomePage({ userData, welcome, setWelcome }) {
                 </ul>
               </div>         
             </div>
-            <div className="w-10/20 px-3 py-6 overflow-scroll overflow-x-hidden no-scrollbar">
+            <div className="w-10/20 px-3 py-3 overflow-scroll overflow-x-hidden no-scrollbar">
               <div className="h-2/3">
               { creating ? 
                 (
@@ -286,7 +286,7 @@ function HomePage({ userData, welcome, setWelcome }) {
                                 placeholder={
                                 `All'improviso mi è scattato qualcosa nella testa e ho pensato: ` +
                                 `A me piace farlo". E in quel preciso istante ho scoperto una libertà ` +
-                                `che non posedevo prima. `}
+                                `che non posedevo prima.`}
                               />
                             </div>
                           </div> 
@@ -382,7 +382,7 @@ function HomePage({ userData, welcome, setWelcome }) {
               }            
               </div>
             </div>
-            <div className="w-5/20 pl-3 pr-6 py-6 overflow-scroll 
+            <div className="w-6/20 pl-3 pr-6 py-3 overflow-scroll 
               overflow-x-hidden no-scrollbar"
             >
               { lemma ? 
