@@ -184,7 +184,7 @@ function HomePage({ userData, welcome, setWelcome }) {
                   </h1>
                   <motion.button 
                     whileHover={{ scale: 1.03 }} 
-                    onClick={() => {setLemma(false); setCreateMode(true)}} 
+                    onClick={() => {setLemma(false); setCreateMode(true); setView(false)}} 
                     className="flex mr-2"
                   >                  
                     <div className="group relative items-center">
