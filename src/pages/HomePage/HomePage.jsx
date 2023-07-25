@@ -148,8 +148,8 @@ function HomePage({ userData, welcome, setWelcome }) {
       return (
         <>        
           <div className="flex h-sansnavbarfooter">
-            <div className="pl-6 pr-3 py-3 flex flex-col w-96
-              overflow-scroll overflow-x-hidden no-scrollbar border"
+            <div className=" pl-6 pr-3 py-6 flex flex-col w-96 
+              overflow-scroll overflow-x-hidden no-scrollbar"
             >
               { welcome.tipLeft ? 
                 (
@@ -382,7 +382,7 @@ function HomePage({ userData, welcome, setWelcome }) {
               }            
               </div>
             </div>
-            <div className="w-6/20 pl-3 pr-6 py-3 overflow-scroll 
+            <div className="w-6/20 pl-3 pr-6 py-6 overflow-scroll 
               overflow-x-hidden no-scrollbar"
             >
               { lemma ? 
