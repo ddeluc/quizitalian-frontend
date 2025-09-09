@@ -12,7 +12,7 @@ const Footer = () => {
           <span>Tip</span>
         </motion.a>
         <div className="flex space-x-3 mr-6">
-          <p className="font-light text-base">Version 1.0</p>
+          <p className="font-light text-base">Version 1.1</p>
           <p>|</p>
           <p className="font-light text-base">Made with <a className="hover:underline" href='https://dh.fbk.eu/research/tint/' target="_blank">Tint</a></p>
           <p>|</p>
