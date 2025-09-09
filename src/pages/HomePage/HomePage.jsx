@@ -42,6 +42,7 @@ function HomePage({ userData, welcome, setWelcome }) {
 
   // Create a module
   const handleSubmit = async (e) => {
+    console.log("Creating module...");
     e.preventDefault();
     
     try {
@@ -61,29 +62,32 @@ function HomePage({ userData, welcome, setWelcome }) {
       }
 
       // Get Tint data
-      const tintData = await api.tintRequest(text);   
+      const tintData = await api.tintRequest(text);
+      console.log(tintData);   
 
       // Get all sentences: sentence: { tokens: [], verbs: []}
       const sentences = tintData.data.sentences;
+      console.log("Sentences: ", sentences);
 
       // Process the data
-      const processedData = await preprocessData(sentences, text, userData);
+      // const processedData = await preprocessData(sentences, text, userData);
       
       const sendData = {
         title: title,
         text: text,
         author: userData.username,
-        cards: processedData.cards,
-        textList: processedData.textList,
-        verbList: processedData.verbList,
-        translatedText: processedData.translatedText,
+        // cards: processedData.cards,
+        // textList: processedData.textList,
+        // verbList: processedData.verbList,
+        // translatedText: processedData.translatedText,
         sentences: sentences,
+        userData: userData,
       };
 
       // Make post request
       const createModuleData = await api.createModule(sendData);
 
-      await api.addLemmas(userData.id, processedData.lemmaArray);
+      await api.addLemmas(userData.id, createModuleData.data.lemmaArray);
 
       addModule(createModuleData.data, false);      
 
